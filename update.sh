@@ -9,17 +9,17 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     # Ask user for the version of Portainer
-    read -p "Are you using Portainer CE or BE? (ce/be) " version
+    read -p "Are you using Portainer CE or EE? (ce/ee) " version
     echo
 
     if [[ $version == "ce" ]]
     then
         IMAGE_NAME="portainer/portainer-ce:latest"
-    elif [[ $version == "be" ]]
+    elif [[ $version == "ee" ]]
     then
-        IMAGE_NAME="portainer/portainer:latest"
+        IMAGE_NAME="portainer/portainer-ee:latest"
     else
-        echo "Invalid version. Please enter either 'ce' or 'be'."
+        echo "Invalid version. Please enter either 'ce' or 'ee'."
         exit 1
     fi
 
