@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Name of the existing Portainer container
-CONTAINER_NAME="portainer"
+CONTAINER_NAME="Portainer"
 
 # Ask user for confirmation
 read -p "This script will stop and remove your existing Portainer container and create a new one with the latest image. Do you want to proceed? (y/n) " -n 1 -r
