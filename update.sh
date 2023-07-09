@@ -25,6 +25,11 @@ then
 
     # Get existing Portainer ports
     PORTS=$(docker inspect --format='{{(index (index .NetworkSettings.Ports "9000/tcp") 0).HostPort}}' $CONTAINER_NAME)
+    if [ -z "$PORTS" ]
+    then
+        echo "Unable to find port mapping for Portainer. Please make sure that Portainer is running and that port 9000 is mapped to a host port."
+        exit 1
+    fi
 
     # Stop the existing Portainer container
     docker stop $CONTAINER_NAME
